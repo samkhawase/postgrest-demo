@@ -1,0 +1,95 @@
+{
+	"info": {
+		"_postman_id": "95cd489f-5d82-49d9-a953-9a8b7795f0bc",
+		"name": "postgrest",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "POST localhost:3000/amenity",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Ik1EVTRSRVZGTUROQk5rTXhSRU5CUlVWQ1Jqa3lOakV3TWtOR01VWXdSVGhCTWpFNVJVVkROQSJ9.eyJodHRwczovL3Bvc3RncmVzdC1kZW1vLmRlL3JvbGUiOiJhcGlfdXNlciIsImdpdmVuX25hbWUiOiJTYWtoYXJhbSIsImZhbWlseV9uYW1lIjoiR2F0bmUiLCJuaWNrbmFtZSI6ImZva2F0bGFsIiwibmFtZSI6IlNha2hhcmFtIEdhdG5lIiwicGljdHVyZSI6Imh0dHBzOi8vcGxhdGZvcm0tbG9va2FzaWRlLmZic2J4LmNvbS9wbGF0Zm9ybS9wcm9maWxlcGljLz9hc2lkPTkyNzcwMDIzNzYyMDQ1NiZoZWlnaHQ9NTAmd2lkdGg9NTAmZXh0PTE1ODU0MDIzNzEmaGFzaD1BZVRnakhhRUxmRnREcVEtIiwidXBkYXRlZF9hdCI6IjIwMjAtMDItMjdUMTM6MzI6NTEuMTY2WiIsImlzcyI6Imh0dHBzOi8vcmVkb25pb24uZXUuYXV0aDAuY29tLyIsInN1YiI6ImZhY2Vib29rfDkyNzcwMDIzNzYyMDQ1NiIsImF1ZCI6Ikx6VFhkam1vZkg1b0R1N2FkblBKNW13SW5sMlYwbjBFIiwiaWF0IjoxNTgyODEwMzcxLCJleHAiOjE1ODI4NDYzNzF9.ktCSKDsZerOjROQesvR-orB5G6U7O_rLk7wGmS_urGgNa1luu06obc2sismtOsBJa29nw0153_NX47PPDgrE9fHP0C90XGOJrJPMQ720rqqyZL4PPW63-O6g_FYHqVh5AmJeuS53tbo8vHwrwcvIg2sjULKnWKU65Nt6avMVFAYFfW-kuhTzSQKPGXoKbjHscjsDxs1iHI6vJIJp0un7wzjm-p3kT5YuriV30Vjvwt5Ckqg1pm8PBDW4xQU1aZpXFLhLp1Lxl40DymoyGQqCvSGVCVNlbdZtodRRN_B8Vs9gCqSxdtqx5H5V0meLzF-2BrI1R9MQZWgobzd9eVT3UA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json; charset=UTF-8",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \n  \"amenity_name\" : \"Brandenburger Tor\",\n  \"amenity_address\" : \"Pariser Platz\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/amenity",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"amenity"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET localhost:3000/amenity",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Ik1EVTRSRVZGTUROQk5rTXhSRU5CUlVWQ1Jqa3lOakV3TWtOR01VWXdSVGhCTWpFNVJVVkROQSJ9.eyJodHRwczovL3Bvc3RncmVzdC1kZW1vLmRlL3JvbGUiOiJhcGlfdXNlciIsImdpdmVuX25hbWUiOiJTYWtoYXJhbSIsImZhbWlseV9uYW1lIjoiR2F0bmUiLCJuaWNrbmFtZSI6ImZva2F0bGFsIiwibmFtZSI6IlNha2hhcmFtIEdhdG5lIiwicGljdHVyZSI6Imh0dHBzOi8vcGxhdGZvcm0tbG9va2FzaWRlLmZic2J4LmNvbS9wbGF0Zm9ybS9wcm9maWxlcGljLz9hc2lkPTkyNzcwMDIzNzYyMDQ1NiZoZWlnaHQ9NTAmd2lkdGg9NTAmZXh0PTE1ODU0MDIzNzEmaGFzaD1BZVRnakhhRUxmRnREcVEtIiwidXBkYXRlZF9hdCI6IjIwMjAtMDItMjdUMTM6MzI6NTEuMTY2WiIsImlzcyI6Imh0dHBzOi8vcmVkb25pb24uZXUuYXV0aDAuY29tLyIsInN1YiI6ImZhY2Vib29rfDkyNzcwMDIzNzYyMDQ1NiIsImF1ZCI6Ikx6VFhkam1vZkg1b0R1N2FkblBKNW13SW5sMlYwbjBFIiwiaWF0IjoxNTgyODEwMzcxLCJleHAiOjE1ODI4NDYzNzF9.ktCSKDsZerOjROQesvR-orB5G6U7O_rLk7wGmS_urGgNa1luu06obc2sismtOsBJa29nw0153_NX47PPDgrE9fHP0C90XGOJrJPMQ720rqqyZL4PPW63-O6g_FYHqVh5AmJeuS53tbo8vHwrwcvIg2sjULKnWKU65Nt6avMVFAYFfW-kuhTzSQKPGXoKbjHscjsDxs1iHI6vJIJp0un7wzjm-p3kT5YuriV30Vjvwt5Ckqg1pm8PBDW4xQU1aZpXFLhLp1Lxl40DymoyGQqCvSGVCVNlbdZtodRRN_B8Vs9gCqSxdtqx5H5V0meLzF-2BrI1R9MQZWgobzd9eVT3UA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/amenity",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"amenity"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IlJFRkdSVUpHT0RkRU5EUkdPVU5HTWpnNU16VkRNRGxDTVVJME1EZ3dNVGhFT0RrME0wWXdNQSJ9.eyJodHRwczovL2IzcmwuaW4vcm9sZSI6InBvaV91c2VyIiwiZ2l2ZW5fbmFtZSI6IlNha2hhcmFtIiwiZmFtaWx5X25hbWUiOiJHYXRuZSIsIm5pY2tuYW1lIjoiZm9rYXRsYWwiLCJuYW1lIjoiU2FraGFyYW0gR2F0bmUiLCJwaWN0dXJlIjoiaHR0cHM6Ly9wbGF0Zm9ybS1sb29rYXNpZGUuZmJzYnguY29tL3BsYXRmb3JtL3Byb2ZpbGVwaWMvP2FzaWQ9OTI3NzAwMjM3NjIwNDU2JmhlaWdodD01MCZ3aWR0aD01MCZleHQ9MTU4NTE0MzcwOSZoYXNoPUFlU0dxVXdlbWFXQnNJN2YiLCJ1cGRhdGVkX2F0IjoiMjAyMC0wMi0yNFQxMzo0MTo0OS4zMjJaIiwiaXNzIjoiaHR0cHM6Ly9sb29sb2NhdG9yLmV1LmF1dGgwLmNvbS8iLCJzdWIiOiJmYWNlYm9va3w5Mjc3MDAyMzc2MjA0NTYiLCJhdWQiOiJDTzFrY0pkMzdtV2xQdW0xazJCRXpyRDF3YjBCaTdkdSIsImlhdCI6MTU4MjU1MTcwOSwiZXhwIjoxNTgyNTg3NzA5fQ.QQ-H2jfcZLbFGO819o5rcWS1oiuYGX9SB_ElqjuVmZD8a39I9yFa8nscHvj1qJyWQt78Ce8W0vVFgSZORDrYL91qrmdytR_-gM8eGRKHwmuWMF5zQjNaazuvnG0Zl2cvNCV_CIbdpzrnPQbC-ePTlktFucYeQOcr6NhO8SASAaL_sMm_8g4hycyfLhX91kcItXWAKM-2Iw8CYij-8HM2H_dytkQfqdqw7E71MDP6BCTuClB3nx-7sbSslW05vgIFHueQF3ZtQu13umxrZgfZzxwSPUeWosnajBKA3XjpBwVW1kGWqy5UIpB53lMgX_uZphL_XOI8z4AnAZSmu9eiow",
+				"type": "string"
+			}
+		]
+	},
+	"protocolProfileBehavior": {}
+}
