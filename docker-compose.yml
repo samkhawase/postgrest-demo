@@ -13,28 +13,31 @@ services:
     volumes:
       - "./pgdata:/var/lib/postgresql/data"
       - "./scripts:/docker-entrypoint-initdb.d"
-  # server:    
-  #   image: postgrest/postgrest
-  #   ports:
-  #     - "3000:3000"
-  #   links:
-  #     - db:db
-  #   environment:
-  #     PGRST_DB_URI: postgres://app_user:password@db:5432/app_db
-  #     PGRST_DB_SCHEMA: api
-  #     PGRST_DB_ANON_ROLE: api_anon
-  #     PGRST_ROLE_CLAIM_KEY: ".\"https://b3rl.in/role\""
-  #     PGRST_JWT_SECRET: "@/opt/config/rsa.jwk.pub"
-  #   volumes:
-  #     - "./certs/rsa.jwk.pub:/opt/config/rsa.jwk.pub"
-  #   depends_on:
-  #     - db
+  server:    
+    image: postgrest/postgrest
+    ports:
+      - "3000:3000"
+    links:
+      - db:db
+    environment:
+      PGRST_DB_URI: postgres://app_user:password@db:5432/app_db
+      PGRST_DB_SCHEMA: api
+      PGRST_DB_ANON_ROLE: api_anon
+      PGRST_ROLE_CLAIM_KEY: ".\"https://postgrest-demo.de/role\""
+      PGRST_JWT_AUD: "LzTXdjmofH5oDu7adnPJ5mwInl2V0n0E"
+      PGRST_JWT_SECRET: "@/opt/config/rsa.jwk.pub"
+    volumes:
+      - "./certs/rsa.jwk.pub:/opt/config/rsa.jwk.pub"
+    depends_on:
+      - db
 
-  # swagger:
-  #   image: swaggerapi/swagger-ui
-  #   ports:
-  #     - "8080:8080"
-  #   expose:
-  #     - "8080"
-  #   environment:
-  #     API_URL: http://localhost:3000/
+  swagger:
+    image: swaggerapi/swagger-ui
+    ports:
+      - "8080:8080"
+    expose:
+      - "8080"
+    environment:
+      API_URL: http://localhost:3000/
+
+

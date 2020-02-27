@@ -35,3 +35,7 @@ GRANT SELECT on api.review to api_anon;
 GRANT ALL on schema api to api_user;
 GRANT ALL on api.amenity to api_user;
 GRANT ALL on api.review to api_user;
+
+GRANT ALL PRIVILEGES ON ALL SEQUENCES IN SCHEMA api TO api_user;
+-- GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA api TO api_user;
+-- GRANT ALL PRIVILEGES ON ALL FUNCTIONS IN SCHEMA api TO api_user;
