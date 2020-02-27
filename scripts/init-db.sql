@@ -32,6 +32,6 @@ GRANT USAGE on SCHEMA api to api_anon;
 GRANT SELECT on api.amenity to api_anon;
 GRANT SELECT on api.review to api_anon;
 
-grant usage on schema api to api_user;
-grant all on api.amenity to api_user;
-grant all on api.review to api_user;
+GRANT ALL on schema api to api_user;
+GRANT ALL on api.amenity to api_user;
+GRANT ALL on api.review to api_user;

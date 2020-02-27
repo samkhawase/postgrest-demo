@@ -1,43 +1,40 @@
 version: '3'
 services:
-  server:
-    image: postgrest/postgrest
-    ports:
-      - "3000:3000"
-    links:
-      - db:db
-    environment:
-      PGRST_DB_URI: postgres://app_user:password@db:5432/app_db
-      PGRST_DB_SCHEMA: api
-      PGRST_DB_ANON_ROLE: api_user
-      # PGRST_JWT_AUD: "account"
-      PGRST_JWT_SECRET: "BKz8SoXclJp1rT1kTXuJx6tUhFy6Q+Gj55t0K0iLAumcBJV+9s8bCOwf2cOO7pDp"
-    depends_on:
-      - db
-      # - keycloak
-  # keycloak:
-  #   image: jboss/keycloak
-  #   ports:
-  #     - 9000:8080
-  #   environment:
-  #     KEYCLOAK_USER: admin
-  #     KEYCLOAK_PASSWORD: password
   db:
     image: postgres:alpine
     ports:
       - "5432:5432"
+    expose:
+      - "5432"
     environment:
       POSTGRES_DB: app_db
       POSTGRES_USER: app_user
       POSTGRES_PASSWORD: password
     volumes:
       - "./pgdata:/var/lib/postgresql/data"
-      - ./scripts:/docker-entrypoint-initdb.d
-  swagger:
-    image: swaggerapi/swagger-ui
-    ports:
-      - "8080:8080"
-    expose:
-      - "8080"
-    environment:
-      API_URL: http://localhost:3000/
+      - "./scripts:/docker-entrypoint-initdb.d"
+  # server:    
+  #   image: postgrest/postgrest
+  #   ports:
+  #     - "3000:3000"
+  #   links:
+  #     - db:db
+  #   environment:
+  #     PGRST_DB_URI: postgres://app_user:password@db:5432/app_db
+  #     PGRST_DB_SCHEMA: api
+  #     PGRST_DB_ANON_ROLE: api_anon
+  #     PGRST_ROLE_CLAIM_KEY: ".\"https://b3rl.in/role\""
+  #     PGRST_JWT_SECRET: "@/opt/config/rsa.jwk.pub"
+  #   volumes:
+  #     - "./certs/rsa.jwk.pub:/opt/config/rsa.jwk.pub"
+  #   depends_on:
+  #     - db
+
+  # swagger:
+  #   image: swaggerapi/swagger-ui
+  #   ports:
+  #     - "8080:8080"
+  #   expose:
+  #     - "8080"
+  #   environment:
+  #     API_URL: http://localhost:3000/
