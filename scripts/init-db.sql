@@ -28,6 +28,11 @@ create table api.review (
 CREATE ROLE api_user nologin;
 CREATE ROLE api_anon nologin;
 
+CREATE ROLE authenticator WITH NOINHERIT LOGIN PASSWORD 'password';
+
+GRANT api_user TO authenticator;
+GRANT api_anon TO authenticator;
+
 GRANT USAGE on SCHEMA api to api_anon;
 GRANT SELECT on api.amenity to api_anon;
 GRANT SELECT on api.review to api_anon;

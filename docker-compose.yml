@@ -20,7 +20,7 @@ services:
     links:
       - db:db
     environment:
-      PGRST_DB_URI: postgres://app_user:password@db:5432/app_db
+      PGRST_DB_URI: postgres://authenticator:password@db:5432/app_db
       PGRST_DB_SCHEMA: api
       PGRST_DB_ANON_ROLE: api_anon
       PGRST_ROLE_CLAIM_KEY: ".\"https://postgrest-demo.de/role\""
@@ -39,5 +39,3 @@ services:
       - "8080"
     environment:
       API_URL: http://localhost:3000/
-
-
